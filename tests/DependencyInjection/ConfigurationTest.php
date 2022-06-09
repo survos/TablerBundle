@@ -51,14 +51,15 @@ class ConfigurationTest extends TestCase
                 'options' => [
                     'boxed_layout' => true,
                     'dark_mode' => false,
-                    'navbar_condensed' => false,
+                    'navbar_condensed' => true,
                     'rtl_mode' => false,
                     'user_menu_condensed' => false,
                     'logo_url' => null,
+                    'navbar_overlap' => false,
                 ],
                 'knp_menu' => [
                     'enable' => false,
-                    'main_menu' => 'adminlte_main',
+                    'main_menu' => 'tabler_main',
                     'breadcrumb_menu' => false,
                 ],
                 'routes' => [

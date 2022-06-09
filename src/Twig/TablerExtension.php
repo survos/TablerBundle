@@ -18,7 +18,7 @@ class TablerExtension extends AbstractExtension
     /**
      * @return TwigFilter[]
      */
-    public function getFilters()
+    public function getFilters(): array
     {
         return [
             new TwigFilter('tabler_container', [RuntimeExtension::class, 'containerClass']),
@@ -28,13 +28,17 @@ class TablerExtension extends AbstractExtension
         ];
     }
 
-    public function getFunctions()
+    /**
+     * @return TwigFunction[]
+     */
+    public function getFunctions(): array
     {
         return [
             new TwigFunction('tabler_menu', [RuntimeExtension::class, 'getMenu']),
             new TwigFunction('tabler_notifications', [RuntimeExtension::class, 'getNotifications']),
             new TwigFunction('tabler_user', [RuntimeExtension::class, 'getUserDetails']),
             new TwigFunction('tabler_icon', [RuntimeExtension::class, 'createIcon'], ['is_safe' => ['html']]),
+            new TwigFunction('tabler_badge', [RuntimeExtension::class, 'createBadge'], ['is_safe' => ['html']]),
         ];
     }
 }
